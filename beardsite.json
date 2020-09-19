@@ -491,60 +491,7 @@
             }
         },
       
-        {
-            "type": "Microsoft.Compute/virtualMachines",
-            "apiVersion": "2019-03-01",
-            "name": "[parameters('virtualMachines_frontendSERVER_name')]",
-            "location": "[resourceGroup().location]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_frontendserver859_name'))]"
-            ],
-            "tags": {
-                "BeardSite": "[resourceGroup().location]"
-            },
-            "properties": {
-                "hardwareProfile": {
-                    "vmSize": "Standard_B1s"
-                },
-                "storageProfile": {
-                    "imageReference": {
-                        "publisher": "Canonical",
-                        "offer": "UbuntuServer",
-                        "sku": "18.04-LTS",
-                        "version": "latest"
-                    },
-                    "osDisk": {
-                        "osType": "Linux",
-                        "name": "[concat(parameters('virtualMachines_frontendSERVER_name'), '_OsDisk_1_c6d33243208549028193e578673837b9')]",
-                        "createOption": "FromImage",
-                        "caching": "ReadWrite",
-                        "managedDisk": {
-                            "storageAccountType": "Standard_LRS"
-                        },
-                        "diskSizeGB": 30
-                    },
-                    "dataDisks": []
-                },
-                "osProfile": {
-                    "computerName": "[parameters('virtualMachines_frontendSERVER_name')]",
-                    "adminUsername": "beardmin",
-                    "adminPassword": "mM%Vc!562yTj",
-                    "linuxConfiguration": {
-                        "disablePasswordAuthentication": false,
-                        "provisionVMAgent": true
-                    },
-                    "secrets": [],
-                    "allowExtensionOperations": true
-                },
-                "networkProfile": {
-                    "networkInterfaces": [
-                        {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_frontendserver859_name'))]"
-                        }
-                    ]
-                }
-            }
-        },
+        
         {
             "type": "Microsoft.Network/virtualNetworks/subnets",
             "apiVersion": "2019-07-01",
