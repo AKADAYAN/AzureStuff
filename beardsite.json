@@ -7,7 +7,7 @@
             "type": "String"
         },
         "virtualMachines_backendSERVER2_name": {
-            "defaultValue": "backendSERVER",
+            "defaultValue": "backendSERVER2",
             "type": "String"
         },
         "virtualMachines_frontendSERVER_name": {
