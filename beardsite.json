@@ -19,7 +19,7 @@
             "type": "String"
         },
         "networkInterfaces_backendserver890_name": {
-            "defaultValue": "backendserver889",
+            "defaultValue": "backendserver8890",
             "type": "String"
         },
         "publicIPAddresses_backendSERVER_ip_name": {
@@ -31,7 +31,7 @@
             "type": "String"
         },
         "networkSecurityGroups_backendSERVER2_nsg_name": {
-            "defaultValue": "backendSERVER-nsg",
+            "defaultValue": "backendSERVER2-nsg",
             "type": "String"
         },
         "networkInterfaces_frontendserver859_name": {
