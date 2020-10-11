@@ -42,7 +42,8 @@
     "variables": {
 
         "VM-01": "Web-01",
-        "VM-02": "wEB-02"
+        "VM-02": "WEB-02"
+        
     },
     "resources": [
         {
@@ -271,7 +272,7 @@
                 },
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_backendSERVER_name')]",
-                    "adminUsername": "beardmin",
+                    "adminUsername": "localadmin",
                     "adminPassword": "R@mbo_11001100",
                     "windowsConfiguration": {
                         "provisionVMAgent": true,
@@ -306,13 +307,13 @@
                 },
                 "storageProfile": {
                     "imageReference": {
-                        "publisher": "Canonical",
-                        "offer": "UbuntuServer",
-                        "sku": "18.04-LTS",
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2016-Datacenter",
                         "version": "latest"
                     },
                     "osDisk": {
-                        "osType": "Linux",
+                        "osType": "Windows",
                         "name": "[concat(parameters('virtualMachines_frontendSERVER_name'), '_OsDisk_1_c6d33243208549028193e578673837b9')]",
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
@@ -325,11 +326,11 @@
                 },
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_frontendSERVER_name')]",
-                    "adminUsername": "beardmin",
+                    "adminUsername": "localadmin",
                     "adminPassword": "R@mbo_11001100",
-                    "linuxConfiguration": {
-                        "disablePasswordAuthentication": false,
-                        "provisionVMAgent": true
+                   "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
                     },
                     "secrets": [],
                     "allowExtensionOperations": true
